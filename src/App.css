@@ -22,3 +22,12 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.article {
+	padding-left:2em;
+	padding-right:2em;
+}
+
+.article p {
+	text-align:left;
+}
