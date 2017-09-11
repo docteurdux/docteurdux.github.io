@@ -16,10 +16,20 @@ class Image extends Component {
 	}
 }
 
+class H2 extends Component {
+	render() {
+	const {children, name} = this.props;
+	return <h2>
+		{children}
+		<a name={name} className="anchor" href={"#"+name} ariaLabelledby={"header-"+name} />
+	</h2>;
+	}
+}
+
 class InstallingJDK extends Component {
 	render() {
 		return <div className="article">
-			<h2>0. Installing the JDK</h2>
+			<H2 name="installing-jdk">0 Installing the JDK</H2>
 			<p>The Java compiler is included in the Java Development Kit.</p>
 			<p>Installing it is fairly easy, but there are a couple of things to be aware of.</p>
 			<p>The JDK is updated regularly and the link to the download page is not very stable. The easiest way to get to it is to look for it with a search engine. Searching for &quot;jdk&quot; should do the trick.</p>
@@ -34,7 +44,7 @@ class InstallingJDK extends Component {
 			<Image src={Screenshot22png} />
 			<p>Then click next, wait a little, and that's it. The JDK is installed on your system</p>
 			<Image src={Screenshot32png} />
-			<p>If you followed these steps, you should be able to find the java compiler (javac.exe) at the following location: C:\Program Files\Java\jdk1.8.0_144\bin, or at a similar location because things change.</p>
+			<p>If you followed these steps, you should be able to find the java compiler (<code>javac.exe</code>) at the following location: C:\Program Files\Java\jdk1.8.0_144\bin, or at a similar location because things change.</p>
 		</div>;
 	}
 }
